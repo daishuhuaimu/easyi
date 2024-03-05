@@ -1,9 +1,12 @@
 <template>
   <div>
-    <h1>我是APP</h1>
+    <router-view></router-view>
   </div>
 </template>
 
-<script lang="ts"></script>
+<script setup lang="ts">
 
-<style scoped></style>
+
+</script>
+
+<style scoped lang="scss"></style>
