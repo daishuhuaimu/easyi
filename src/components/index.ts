@@ -3,17 +3,16 @@ import type { App } from 'vue'
 // import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import SvgIcon from './SvgIcon/index.vue'
 import hehe from './hehe/index.vue'
-const allCompinents:any = {SvgIcon,hehe}
+const allCompinents: any = { SvgIcon, hehe }
 // console.log(Object.keys(allCompinents))
 
 export default {
-    install (app:App){
-        Object.keys(allCompinents).forEach(key=>{
-            // console.log(key,allCompinents[key])
-            app.component(key,allCompinents[key]);
-              }) 
-
-    }
+  install(app: App) {
+    Object.keys(allCompinents).forEach((key) => {
+      // console.log(key,allCompinents[key])
+      app.component(key, allCompinents[key])
+    })
+  },
 }
 // const install = function (app: App) {
 //     Object.entries(components).forEach(([key, value]) => {

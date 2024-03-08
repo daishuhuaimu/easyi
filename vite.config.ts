@@ -10,17 +10,17 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   let env = loadEnv(mode, process.cwd())
   return {
     base: './',
-    plugins: [vue(),
-    createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
-      symbolId: 'icon-[dir]-[name]',
-    }),
+    plugins: [
+      vue(),
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve(process.cwd(), 'src/assets/icons')],
+        symbolId: 'icon-[dir]-[name]',
+      }),
       viteMockServe({
-        enable: command === 'serve',
-      })
+        localEnabled: command === 'serve',
+      }),
+    ],
 
-  ],
-  
     resolve: { alias: { '@': path.resolve('./src') } },
     css: {
       preprocessorOptions: {
@@ -30,6 +30,5 @@ export default ({ command, mode }: ConfigEnv): UserConfigExport => {
         },
       },
     },
-
   }
 }
